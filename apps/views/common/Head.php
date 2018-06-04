@@ -10,6 +10,6 @@
     
     <!-- Main style -->
     <link rel="stylesheet" href="/css/style.css">
-    <title><?php echo $title; ?></title>
+    <title><?php echo (isset($title) && !empty($title)) ? $title : $ini->projectName; ?></title>
 </head>
 <body>
