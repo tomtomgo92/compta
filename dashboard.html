@@ -43,28 +43,23 @@
                   Operations
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Ajouter banque
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Ajouter operation
-                </a>
-              </li>
               
             </ul>
+            <br/>
+            <h2>300 €</h2>
 
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Ajouter opertaion
+</button>
 
           </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 
-
+          
           <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
 
           <h2>Operations</h2>
@@ -73,118 +68,21 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>Date</th>
+                  <th>Type</th>
+                  <th>Montant</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
+                  <td>4,001</td>
+                  <td>01/03/1988</td>
+                  <td>Vetements</td>
+                  <td>30,29 €</td>
                   <td>sit</td>
                 </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
+                
                 <tr>
                   <td>1,015</td>
                   <td>sodales</td>
@@ -198,6 +96,88 @@
         </main>
       </div>
     </div>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Operation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+          <form>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Date</label>
+                  <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Montant</label>
+                  <input type="text" class="form-control" id="inputPassword4">
+                </div>
+              </div>
+              <div class="form-row">
+              <div class="form-group col-md-6">
+                  <label for="exampleFormControlSelect1">Categorie</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option disabled>Credit</option>
+                    <option >Salaire</option>
+                    <option>Autre Entrée D'argent</option>
+                    <option disabled>Debit</option>
+                    <option>Vetements</option>
+                    <option>Alimentaire</option>
+                    <option>Autre Depense</option>
+                  </select>
+                </div>
+                  <div class="form-group col-md-6">
+                      <label for="exampleFormControlSelect1">Devise</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Euro (€)</option>
+                        <option>Dollard ($)</option>
+                        <option>Livre ()</option>
+                        <option>Bitcoin</option>
+                        <option>Autre Depense</option>
+                      </select>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <label for="exampleFormControlSelect1">Commentaire</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+                </div>
+                <div class="form-row">
+                    <label for="exampleFormControlSelect1">Liste des comptes</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option disabled>PEL</option>
+                          <option disabled>La Poste</option>
+                        </select>
+                      </div>
+  
+
+            </form>
+
+
+       <form>
+        <div class="form-group">
+          
+        </div>
+       </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary">Sauvegarde</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -215,14 +195,18 @@
 
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+
+
+
     <script>
       var ctx = document.getElementById("myChart");
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          labels: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"],
           datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            data: [1539, 2345, 1883, 240, 2349, 2402, -124, 2349, 292, 104, 2402, 1204],
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
