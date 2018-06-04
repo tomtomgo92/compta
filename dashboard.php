@@ -78,7 +78,7 @@ $tab = array (
     'ID' => '1',
     'Date' => '01/03/1988',
     'Type' => 'Vetements',
-    'Montant' => '30,29 €');
+    'Montant' => 66);
 ?>
                 <tr>
                   <td><?= $tab['ID'];?></td>
@@ -92,6 +92,30 @@ $tab = array (
         </main>
       </div>
     </div>
+
+
+<?php
+/* 
+include('includes/db.php');
+if ( empty($_SESSION['users']) ) {
+	header('Location: connection.html');
+	die();
+}
+if ( !empty($_POST['description']) AND (!empty($_POST['title'])) ){
+	$forum->creerTopic(
+	$_POST['title'],
+	$_POST['description'],
+	$_SESSION['users']['id'],
+	$_POST['categorie']
+	);
+	header('Location: accueil.php');
+	die();
+}
+else {
+	header('Location: formulaire_topic.php');
+}
+ */
+?>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -143,7 +167,6 @@ $tab = array (
               <div class="form-row">
                   <label for="exampleFormControlSelect1">Commentaire</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-
                 </div>
                 <div class="form-row">
                     <label for="exampleFormControlSelect1">Liste des comptes</label>
@@ -151,21 +174,13 @@ $tab = array (
                           <option disabled>PEL</option>
                           <option disabled>La Poste</option>
                         </select>
+                      </div> 
+                      <br>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                        <input type="submit" class="btn btn-primary"/>
                       </div>
-  
-
             </form>
-
-
-       <form>
-        <div class="form-group">
-          
-        </div>
-       </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary">Sauvegarde</button>
       </div>
     </div>
   </div>
@@ -198,7 +213,7 @@ $tab = array (
         data: {
           labels: ["Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"],
           datasets: [{
-            data: [1539, 2345, 1883, 240, 2349, 2402, -124, 2349, 292, 104, 2402, 1204],
+            data: [<?= json_encode((int) $tab['Montant']);?>, 2345, 1883, 240, 2349, 2402, -124, 2349, 292, 104, 2402, 1204],
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
