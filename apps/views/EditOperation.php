@@ -11,7 +11,7 @@
             <?php } ?>
         </select>
         <select class="form-control mb-2" name="paymentMethod">
-            <?php foreach($m[0] as $method) { ?>
+            <?php foreach($paymentMethods as $method) { ?>
                 <option value="<?= $method ?>"  <?=(urldecode($_GET['paymentMethod']) == $method)?'selected':''?>><?= strtoupper($method)?></option>
             <?php } ?>
         </select>

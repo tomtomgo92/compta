@@ -53,7 +53,6 @@ class OperationsModel extends PDOModel {
     }   
 
     public function getPaymentMethods () {
-        $q = "SELECT SUBSTR(COLUMN_TYPE, 5) AS pay FROM information_schema.`COLUMNS` WHERE TABLE_NAME = 'operations' AND COLUMN_NAME = 'paymentMethod';";
-        return $this->select($q)->rows;
+        return $this->getEnum('operations', 'paymentMethod');
     }
 }

@@ -91,7 +91,7 @@
             <div class="form-group col-md-6">
               <label for="exampleFormControlSelect1">Moyen de paiement</label>
               <select class="form-control" name="paymentMethod" id="exampleFormControlSelect1">
-                <?php foreach($m[0] as $method) { ?>
+                <?php foreach($paymentMethods as $method) { ?>
                   <option value="<?= $method ?>"><?= strtoupper($method) ?></option>
                 <?php } ?>
               </select>
