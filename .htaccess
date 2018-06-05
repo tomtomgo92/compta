@@ -1,1 +1,6 @@
 ErrorDocument 404 http://localhost/episodes/page_404.php
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
