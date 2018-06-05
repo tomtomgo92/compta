@@ -1,0 +1,26 @@
+{
+  "name": "compta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomtomgo92/compta.git"
+  },
+  "author": "tg,tm,ah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomtomgo92/compta/issues"
+  },
+  "devDependencies": {
+    "gulp-changed": "^3.2.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0"
+  },  
+  "homepage": "https://github.com/tomtomgo92/compta#readme"
+}
