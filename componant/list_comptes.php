@@ -46,7 +46,7 @@
             </ul>
             <br/>
             <h2>300 €</h2>
-            
+            <canvas class="my-4" id="myChartPie" width="250px"></canvas>
 
           </div>
         </nav>
@@ -58,7 +58,12 @@
   <h5 class="card-header">Compte Courant</h5>
   <div class="card-body">
     <h5 class="card-title">32 000€</h5>
-    <p class="card-text">Tout roule pour vous !</p>
+    <div class="row">
+    <div class="col"><p class="card-text">Tout roule pour vous !</p></div>
+    <div class="col"><canvas class="my-4" id="myChart" width="250px"></canvas></div>
+    </div>
+
+    
     <a href="#" class="btn btn-primary">Plus d'information</a>
   </div>
 </div>
@@ -79,6 +84,35 @@
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+
+    <script>
+        var ctx = document.getElementById("myChartPie");
+var myRadarChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+    labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+    datasets: [{
+        data: [20, 10, 4, 2]
+    }]
+}
+});
+
+        var ctx = document.getElementById("myChart");
+var myRadarChart = new Chart(ctx, {
+    type: 'radar',
+    data: {
+    labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+    datasets: [{
+        data: [20, 10, 4, 2]
+    }]
+}
+});
+
     </script>
 </body>
 </html>
