@@ -93,23 +93,34 @@
     <script>
         var ctx = document.getElementById("myChartPie");
 var myRadarChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'line',
     data: {
-    labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+    labels: ['Mois -2', 'mois -1', 'Now'],
     datasets: [{
-        data: [20, 10, 4, 2]
+        data: [20, 10, 40]
     }]
+},//data
+options: {
+        legend: {
+            display: false
+        }
 }
 });
 
         var ctx = document.getElementById("myChart");
 var myRadarChart = new Chart(ctx, {
-    type: 'radar',
+    type: 'doughnut',
     data: {
-    labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+    labels: ['Alimentaire', 'Vestimentaire', 'Loisir', 'Transport', 'Autres'],
     datasets: [{
-        data: [20, 10, 4, 2]
+        data: [9, 8, 7, 6, 5, 0, 0, 0, 0],
+        backgroundColor: ['red', "blue", "#2ECC40", "#FF851B", "#7FDBFF", "#B10DC9", "#FFDC00", "#001f3f", "#39CCCC", "#01FF70", "#85144b", "#F012BE", "#3D9970", "#111111", "#AAAAAA"]
     }]
+},//data
+options: {
+        legend: {
+            display: false
+        }
 }
 });
 

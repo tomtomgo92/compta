@@ -230,6 +230,7 @@ else {
             borderColor: '#007bff',
             borderWidth: 4,
             pointBackgroundColor: '#007bff'
+            
           }]
         },
         options: {
