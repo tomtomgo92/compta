@@ -1,172 +1,109 @@
 <div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-          <div class="sidebar-sticky">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#operation">
-                  <span data-feather="file"></span>
-                  Operations
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Ajouter banque
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Ajouter operation
-                </a>
-              </li>
+  <div class="row">
+      <?php require _VIEWS . '/common/Nav.php'; ?>
 
-            </ul>
-
-
-          </div>
-        </nav>
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-
-
-          <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-
-          <h2>Operations</h2>
-          <div class="table-responsive" id="operation">
-            <table class="table table-striped table-sm">
-              <thead>
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+        <h2>Operations</h2>
+        <div class="table-responsive" id="operation">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th>Compte</th>
+                <th>Commentaire</th>
+                <th>Date</th>
+                <th>Categorie</th>
+                <th>Montant</th>
+                <th></th>
+                <th></th>
+              </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($operations->rows as $op) { ?>
                 <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <td><?= $op->label; ?></td>
+                  <td><?= $op->comment; ?></td>
+                  <td><?= date('d/m/Y', strtotime($op->date)); ?></td>
+                  <td><?= $op->name; ?></td>
+                  <td><?= $op->amount; ?></td>
+                  <td>
+                    <a href="/editoperation/<?= "?id=".urlencode($op->id)."&amp;type=".urlencode($op->idCategory)."&amp;accountId=".urlencode($op->idAccount)."&amp;amount=".urlencode($op->amount)."&amp;comment=".urlencode($op->comment)."&amp;paymentMethod=".urlencode($op->paymentMethod) ?>">
+                      <span data-feather="edit"></i>
+                    </a>
+                  </td>
+                  <td><a href="/deleteoperation/?deleteAccountBtn=1&amp;id=<?=$op->id?>"><span data-feather="trash"></i></a></td>
                 </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
+            <?php }?>
               </tbody>
             </table>
           </div>
         </main>
       </div>
     </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Nouvelle Operation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form method="post" action="/newoperation">
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="inputPassword4">Montant</label>
+            <input type="text" name="amount" class="form-control" id="inputPassword4">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="exampleFormControlSelect1">Categorie</label>
+            <select class="form-control" name="idCategory" id="exampleFormControlSelect1">
+              <option disabled>Credit</option>
+              <option value="8" >Salaire</option>
+              <option value="9" >Autre Entrée D'argent</option>
+              <option disabled>Debit</option>
+              <option value="1" >Alimentaire</option>
+              <option value="2" >Vetements</option>
+              <option value="3" >Loisirs</option>
+              <option value="4" >Transport</option>
+              <option value="5" >Autre Depense</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="exampleFormControlSelect1">Commentaire</label>
+          <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="exampleFormControlSelect1">Liste des comptes</label>
+            <select class="form-control" name="idAccount" id="exampleFormControlSelect1">
+              <?php foreach($accounts as $account) { ?>
+                <option value="<?= $account->id ?>"><?= $account->label ?></option>
+              <?php } ?>
+            </select>
+          </div>
+            <div class="form-group col-md-6">
+              <label for="exampleFormControlSelect1">Moyen de paiement</label>
+              <select class="form-control" name="paymentMethod" id="exampleFormControlSelect1">
+                <?php foreach($m[0] as $method) { ?>
+                  <option value="<?= $method ?>"><?= strtoupper($method) ?></option>
+                <?php } ?>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+            <input type="submit" name="addOpBtn" class="btn btn-primary"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

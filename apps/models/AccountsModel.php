@@ -7,24 +7,25 @@ class AccountsModel extends PDOModel {
         parent::__construct($host, $dbName, $login, $password);
     }
 
-    public function createAccount($userId, $accountType, $provision, $currency) {
-        $q = "INSERT INTO accounts (idUser, accountType, accountProvision, currency) VALUES (:userId, :accountType, :accountProvision, :currency)";
+    public function createAccount($userId, $accountType, $provision, $currency, $label) {
+        $q = "INSERT INTO accounts (idUser, accountType, accountProvision, currency, label) VALUES (:userId, :accountType, :accountProvision, :currency, :label)";
         return $this->request($q, array(
                                     "userId" => $userId,
                                     "accountType" => $accountType,
                                     "accountProvision" => $provision,
-                                    "currency" => $currency
+                                    "currency" => $currency,
+                                    "label" => $label
                                  ));
     }
 
-    public function editAccount($userId, $accountId, $accountType, $provision, $currency) {
-        $q = "UPDATE accounts SET accountType = :accountType, accountProvision = :accountProvision, currency = :currency, idUser = :idUser WHERE id = :accountId";
+    public function editAccount($accountId, $accountType, $provision, $currency) {
+        $q = "UPDATE accounts SET accountType = :accountType, accountProvision = :accountProvision, currency = :currency WHERE id = :accountId";
+        
         return $this->request($q, array(
-                                    "accountId" => $accountId,
+                                    "accountId" => (int) $accountId,
                                     "accountType" => $accountType,
-                                    "accountProvision" => $provision,
-                                    "currency" => $currency,
-                                    "idUser" => $userId
+                                    "accountProvision" => (float) $provision,
+                                    "currency" => $currency
                                   ));    
     }
 
@@ -36,7 +37,7 @@ class AccountsModel extends PDOModel {
     }
 
     public function accountList($userId) {
-        $q = "SELECT * FROM accounts WHERE idUser = 1";
+        $q = "SELECT * FROM accounts WHERE idUser = :userId";
         return $this->select($q, array(
                                     "userId" => $userId
                                   ));

@@ -20,6 +20,7 @@ class PDOModel {
 
     /**
      * @param String $query : The SQL Query string 
+     * @param Array $param : The params of the SQL statement
      */
     public function select($query, $params = array()) {
         if (isset($this->db) && !empty($this->db)) {
@@ -46,6 +47,7 @@ class PDOModel {
 
     /**
      * @param String $query : The SQL Query string
+     * @param Array $param : The params of the SQL statement
      */
     public function request ($query, $params = array()) {
         $query = $this->db->prepare($query);

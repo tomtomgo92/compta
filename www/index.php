@@ -6,10 +6,11 @@ define('_VIEWS', realpath(_APPS . '/views/'));
 
 session_start();
 $_SESSION['idUser'] = 1;
+$_SESSION['idAccount'] = 8;
 
 require _APPS . 'config/config.php';
 
-/* Include the page */
+/* Include the page if it is defined */
 if (isset($view)) {
     include _VIEWS . '/common/Head.php';
     include _VIEWS . '/common/Header.php';
