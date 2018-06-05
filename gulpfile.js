@@ -5,10 +5,10 @@ var sass = require('gulp-sass');
 var rename = require('gulp-rename');
 var run = require('gulp-run');
 
-var SCSS_SRC = './src/Assets/scss/**/*.scss';
-var SCSS_DEST = './src/Assets/css';
+var SCSS_SRC = './Assets/scss/**/*.scss';
+var SCSS_DEST = './Assets/css';
 
-// Compiler le sass
+// Compiler le sassnpm inst
 gulp.task('sass', function() {
   return gulp
     .src(SCSS_SRC)
