@@ -171,11 +171,20 @@ else {
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="form-row">
+                <div class="form-group col-md-6">
                     <label for="exampleFormControlSelect1">Liste des comptes</label>
                         <select class="form-control" id="exampleFormControlSelect1">
                           <option disabled>PEL</option>
                           <option disabled>La Poste</option>
                         </select>
+</div>
+<div class="form-group col-md-6">
+                         <label for="exampleFormControlSelect1">Moyen de paiement</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option disabled>PEL</option>
+                          <option disabled>La Poste</option>
+                        </select>
+</div>
                       </div> 
                       <br>
                       <div class="modal-footer">
