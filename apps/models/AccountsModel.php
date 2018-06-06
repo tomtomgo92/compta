@@ -30,10 +30,13 @@ class AccountsModel extends PDOModel {
     }
 
     public function deleteAccount($accountId) {
-        $q = "DELETE FROM `accounts` WHERE id = :idAccount";
-        return $this->request($q, array(
-                                    "idAccount" => $accountId
-                                  ));
+        $q = "DELETE FROM operations WHERE idAccount = :idAccount";
+        if ($this->request($q, array( "idAccount" => $accountId ))) {
+            $q = "DELETE FROM `accounts` WHERE id = :idAccount";
+            return $this->request($q,array(
+                                        "idAccount" => $accountId
+                                     ));
+        }
     }
 
     public function accountList($userId) {

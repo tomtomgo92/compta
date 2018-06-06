@@ -3,10 +3,6 @@
 $page = $url_array[0];
 
 switch ($page) {
-    case 'dashboard':
-        include "DashboardController.php";
-        $view = _VIEWS . '/Dashboard.php';
-        break;
     
     /* Account */
     case 'createaccount':
@@ -18,8 +14,15 @@ switch ($page) {
         $view = _VIEWS . '/EditAccount.php';
         break;
     case 'deleteaccount':
+        include 'DeleteAccountController.php';
+        break;
+    case 'dashboard':
         include 'AccountListController.php';
         $view = _VIEWS . '/AccountList.php';
+        break;
+    case 'accountpage':
+        include "DashboardController.php"; // Fichier à renommer
+        $view = _VIEWS . '/Dashboard.php'; // Fichier à renommer
         break;
     /*  */
 

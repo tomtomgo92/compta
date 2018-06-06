@@ -1,5 +1,10 @@
 <?php
 
+if (!isset($_GET['accountId']) && !empty($_GET['accountId']))) {
+    header('Location: /dashboard');
+}  
+$_SESSION['idAccount'] = $_GET['accountId']);
+
 require _MODELS . "/OperationsModel.php";
 require_once _MODELS . '/AccountsModel.php';
 
