@@ -40,9 +40,13 @@ class OperationsModel extends PDOModel {
                             ));
     }
 
-    public function deleteOperation($opId) {
-        $q = "DELETE FROM operations WHERE id = :opId;";
-        $this->request($q, array("opId" => $opId));
+    public function deleteOperation($opId, $accountId) {
+        $q = "UPDATE accounts SET accountProvision = accountProvision - (SELECT (CASE c.typeCat WHEN 'credit' THEN o.amount ELSE o.amount * -1 END ) FROM operations o, category c WHERE o.id = :idOp AND c.id = o.idCategory ORDER BY `date` DESC LIMIT 1) WHERE id = :idAccount;";
+        if ($this->request($q, array( "idOp" => $opId, "idAccount" => $accountId ))) {
+            $q = "DELETE FROM operations WHERE id = :opId;";
+            return $this->request($q, array("opId" => $opId));
+        }
+        return false;
     }
 
     public function getOperationList($user_id, $account_id) {

@@ -4,7 +4,7 @@
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
         <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-        <div class="opHeader">
+        <div class="opHeader d-flex justify-content-between mb-3">
           <h2>Operations</h2>
           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Ajouter operation</button>
         </div>
