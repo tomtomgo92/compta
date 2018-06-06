@@ -20,7 +20,7 @@ class OperationsModel extends PDOModel {
                                  ));
         
         // Update the account
-        $q = "UPDATE accoun ts SET accountProvision = accountProvision + (SELECT (CASE c.typeCat WHEN 'credit' THEN o.amount ELSE o.amount * -1 END ) FROM operations o, category c WHERE o.idUser = :userId AND c.id = o.idCategory ORDER BY `date` DESC LIMIT 1) WHERE idUser = :userId AND id = :idAccount;";
+        $q = "UPDATE accounts SET accountProvision = accountProvision + (SELECT (CASE c.typeCat WHEN 'credit' THEN o.amount ELSE o.amount * -1 END ) FROM operations o, category c WHERE o.idUser = :userId AND c.id = o.idCategory ORDER BY `date` DESC LIMIT 1) WHERE idUser = :userId AND id = :idAccount;";
         $this->request($q, array(
                             "userId" => $user_id,
                             "idAccount" => $account_id
