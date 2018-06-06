@@ -53,8 +53,14 @@ class PDOModel
      * @param Array $param : The params of the SQL statement
      */
     public function request($query, $params = array()) {
-        $query = $this->db->prepare($query);
-        $query->execute($params);
+        try {
+            $query = $this->db->prepare($query);
+            $query->execute($params);
+
+            return true;
+        } catch (Exception $e) {
+            return $e;
+        }
     }
 
     public function getEnum($table, $column) {
