@@ -46,7 +46,7 @@ class OperationsModel extends PDOModel {
     }
 
     public function getOperationList($user_id, $account_id) {
-        $q = "SELECT o.id, o.comment, o.idAccount, a.label, o.date, c.name, o.amount, o.idCategory, o.paymentMethod FROM operations o JOIN category c ON o.idCategory = c.id JOIN accounts a ON o.idAccount = a.id WHERE a.idUser = :userId AND a.id = :accountId;";
+        $q = "SELECT o.id, o.comment, o.idAccount, a.label, o.date, c.name, (SELECT (CASE c.typeCat WHEN 'credit' THEN CONCAT('+', o.amount) ELSE o.amount * -1 END ) WHERE o.idUser = :userId AND c.id = o.idCategory ORDER BY `date` DESC LIMIT 1) amount, o.idCategory, o.paymentMethod FROM operations o JOIN category c ON o.idCategory = c.id JOIN accounts a ON o.idAccount = a.id WHERE a.idUser = :userId AND a.id = :accountId;";
         return $this->select($q, array(
                                     "userId" => (int) $user_id,
                                     "accountId" => (int) $account_id

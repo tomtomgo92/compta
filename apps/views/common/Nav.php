@@ -20,9 +20,7 @@
                 Editer un compte
                 </a>
             </li>
-            <li class="nav-item">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Ajouter operation</button>
-            </li>
+            <h2>300 €</h2>
         </ul> 
     </div>    
 </nav>

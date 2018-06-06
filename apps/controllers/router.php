@@ -18,7 +18,8 @@ switch ($page) {
         $view = _VIEWS . '/EditAccount.php';
         break;
     case 'deleteaccount':
-        include 'DeleteAccountController.php';
+        include 'AccountListController.php';
+        $view = _VIEWS . '/AccountList.php';
         break;
     /*  */
 
