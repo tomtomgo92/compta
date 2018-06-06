@@ -19,8 +19,7 @@ class AccountsModel extends PDOModel {
     }
 
     public function editAccount($accountId, $accountType, $provision, $currency, $label) {
-        /* ne fonctionne pas dans le code mais dans SQLYog oui ??? */
-        $q = "UPDATE accounts SET accountType = :accountType, accountProvision = :accountProvision, currency = :currency, label = :label WHERE id = :accountId;";
+        $q = "UPDATE accounts SET accountType = :accountType, accountProvision = :accountProvision, currency = :currency, label = :label WHERE id = :accountId;";        
         return $this->request($q, array(
                                     "accountId" => (int) $accountId,
                                     "accountType" => $accountType,

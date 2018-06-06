@@ -57,7 +57,7 @@ class PDOModel
             $query = $this->db->prepare($query);
             $query->execute($params);
 
-            return true;
+            return $query->rowCount();
         } catch (Exception $e) {
             return $e;
         }

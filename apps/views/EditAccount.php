@@ -9,7 +9,7 @@
         </select>
         <input type="text" class="form-control mb-2" name="label" />
         <select class="form-control mb-2" name="accountType">
-            <option value="joint account">Joint account</option>
+            <option value="jointaccount">Joint account</option>
             <option value="saving">Saving</option>
             <option value="standart">Standart</option>
         </select>

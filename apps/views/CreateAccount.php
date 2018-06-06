@@ -4,7 +4,7 @@
         <input class="form-control mb-2"  placeholder="Name" type="text" name="label" />
         <select class="form-control mb-2" name="accountType">
             <option selected disabled>Sélectionner un type de compte</option>
-            <option value="joint account">Joint account</option>
+            <option value="jointaccount">Joint account</option>
             <option value="saving">Saving</option>
             <option value="standart">Standart</option>
         </select>
