@@ -38,8 +38,4 @@ switch ($page) {
         include 'DeleteOperationController.php';
         break;
     /*  */
-
-     default:
-        $view = _VIEWS . '/HomePage.php';
-        break; 
 }

@@ -9,7 +9,7 @@
 
 <form action="/action_page.php">
   <div class="imgcontainer">
-    <img src="/compta/Assets/imgs/user.png" alt="Avatar" class="avatar">
+    <img src="../compta/Assets/imgs/user.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
@@ -33,7 +33,7 @@
 
    
     </div>
-    <label><input type="checkbox" checked="checked" name="remember"> Se souveneir de moi !</label>
+    <label><input type="checkbox" checked="checked" name="remember"> Se souvenir de moi !</label>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
