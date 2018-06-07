@@ -1,6 +1,6 @@
 <?php
 
-$page = $url_array[2];
+$page = $url_array[0];
 
 switch ($page) {
     
@@ -38,4 +38,12 @@ switch ($page) {
         include 'DeleteOperationController.php';
         break;
     /*  */
+    case 'home':
+        include '/LoginController.php';
+        $view = _VIEWS . '/HomePage.php';
+        break;
+
+    default:
+        header('Location: /home');
+        break; 
 }
