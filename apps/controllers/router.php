@@ -38,7 +38,6 @@ switch ($page) {
         include 'DeleteOperationController.php';
         break;
     /*  */
-
     case 'home':
         include '/LoginController.php';
         $view = _VIEWS . '/HomePage.php';
