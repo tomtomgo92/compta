@@ -1,9 +1,10 @@
 <?php
 
-if (!isset($_GET['accountId']) && !empty($_GET['accountId']))) {
+if (!isset($_GET['accountId']) && !empty($_GET['accountId'])) {
     header('Location: /dashboard');
 }  
-$_SESSION['idAccount'] = $_GET['accountId']);
+
+$_SESSION['idAccount'] = $_GET['accountId'];
 
 require _MODELS . "/OperationsModel.php";
 require_once _MODELS . '/AccountsModel.php';
@@ -19,3 +20,4 @@ $paymentMethods = $db->getPaymentMethods();
 
 /* Get all accounts of the user */
 $accounts = $acdb->accountList($_SESSION['idUser'])->rows;
+$selectedAccount = $acdb->getAccount($_SESSION['idAccount'])->rows[0];

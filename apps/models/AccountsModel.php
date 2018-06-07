@@ -46,6 +46,11 @@ class AccountsModel extends PDOModel {
                                   ));
     }
 
+    public function getAccount($accountId) {
+        $q = "SELECT * from accounts WHERE id = :accountId LIMIT 1";
+        return $this->select($q, array( "accountId" => $accountId ));
+    }
+
     public function accountCount($userId) {
         $q = "SELECT COUNT(*) FROM accounts WHERE idUser = :userId";
         return $this->select($q, array(

@@ -29,7 +29,7 @@ class UsersModel extends PDOModel {
 
     public function authenticate($email, $password) {
         $encrypt = new Encryption();
-        $q ="SELECT password, salt, iv FROM users WHERE email = :email";
+        $q ="SELECT password, salt, iv FROM users WHERE email = :email LIMIT 1";
         $passwordArray = $this->select($q, array("email" => $email));
         if ($passwordArray->size > 0) {
             $passwordArray = $passwordArray->rows[0];

@@ -20,7 +20,7 @@
                 Editer un compte
                 </a>
             </li>
-            <h2>300 €</h2>
+            <?php if(isset($selectedAccount)) { echo '<h2>'.$selectedAccount->accountProvision.'€</h2>'; } ?>
         </ul> 
     </div>    
 </nav>

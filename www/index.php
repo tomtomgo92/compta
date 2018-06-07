@@ -9,13 +9,6 @@ $_SESSION['idUser'] = 1;
 
 require _APPS . 'config/config.php';
 
-require _MODELS . '/UsersModel.php';
-/* $db = new UsersModel($ini->host, $ini->dbName, $ini->dbUsername, $ini->dbPassword);
-//$db->createUser('TGuillouet', 'Thomas', 'Guillouet', 'thomas.guillouet@thatmuch.fr', '17tg11J59');
-
-var_dump($db->authenticate('thomas.guillouet@thatmuch.fr', '17tg11J59'));
-exit; */
-
 if (!(isset($_SESSION) && !empty($_SESSION))) {
     header('Location: /signin');
 }

@@ -11,7 +11,6 @@
                         <div class="col"><p class="card-text">Tout roule pour vous !</p></div>
                         <div class="col"><canvas class="my-4" id="myChart" width="250px"></canvas></div>
                     </div>
-                    <a href="#" class="btn btn-primary">Plus d'information</a>
                 </div>
             </main>
         </div>
@@ -37,7 +36,7 @@
                                 <div class="col"><p class="card-text">Tout roule pour vous !</p></div>
                                 <div class="col"><canvas class="my-4" id="myChart" width="250px"></canvas></div>
                             </div>
-                            <a href="#" class="btn btn-primary">Plus d'information</a>
+                            <a href="/accountpage/?accountId=<?= $accounts[$i]->id ?>" class="btn btn-primary">Plus d'information</a>
                         </div>
                     </div>
                 <?php
