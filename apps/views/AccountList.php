@@ -55,7 +55,9 @@
                     </div>
                 <?php } else { ?>
                     <div id="addAccount" class="col-md-5 ml-sm-auto col-lg-5 mt-6 p-0 d-flex justify-content-center align-items-center">
-                        <span data-feather="plus-circle"></span>
+                        <button>
+                            <span data-feather="plus-circle"></span>
+                        </button>
                     </div>
                 <?php 
                 }
