@@ -6,9 +6,12 @@ define('_VIEWS', realpath(_APPS . '/views/'));
 
 session_start();
 $_SESSION['idUser'] = 1;
-$_SESSION['idAccount'] = 8;
 
 require _APPS . 'config/config.php';
+
+if (!(isset($_SESSION) && !empty($_SESSION))) {
+    header('Location: /signin');
+}
 
 /* Include the page if it is defined */
 if (isset($view)) {
