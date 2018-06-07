@@ -1,7 +1,7 @@
 <?php
 /* setup different path */
 define('_CONFIG', realpath(__DIR__));
-define('_LIB', realpath(_APPS.'/library/'));
+define('_LIBS', realpath(_APPS.'/lib/'));
 define('_CONTROLLERS', realpath(_APPS.'/controllers/'));
 define('_MODELS', realpath(_APPS.'/models/'));
 

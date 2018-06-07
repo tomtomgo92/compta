@@ -1,10 +1,13 @@
 <div class="container-fluid">
   <div class="row">
-      <?php require _VIEWS . '/common/Nav.php'; ?>
+      <?php require _VIEWS . '/common/Nav.php';?>
 
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
         <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-        <h2>Operations</h2>
+        <div class="opHeader d-flex justify-content-between mb-3">
+          <h2>Operations</h2>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">Ajouter operation</button>
+        </div>
         <div class="table-responsive" id="operation">
           <table class="table table-striped table-sm">
             <thead>
@@ -19,15 +22,15 @@
               </tr>
           </thead>
           <tbody>
-            <?php foreach ($operations->rows as $op) { ?>
+            <?php foreach ($operations->rows as $op) {?>
                 <tr>
-                  <td><?= $op->label; ?></td>
-                  <td><?= $op->comment; ?></td>
-                  <td><?= date('d/m/Y', strtotime($op->date)); ?></td>
-                  <td><?= $op->name; ?></td>
-                  <td><?= $op->amount; ?></td>
+                  <td><?=$op->label;?></td>
+                  <td><?=$op->comment;?></td>
+                  <td><?=date('d/m/Y', strtotime($op->date));?></td>
+                  <td><?=$op->name;?></td>
+                  <td class="<?=($op->amount > 0) ? "text-success" : "text-danger"?>" ><?=$op->amount;?></td>
                   <td>
-                    <a href="/editoperation/<?= "?id=".urlencode($op->id)."&amp;type=".urlencode($op->idCategory)."&amp;accountId=".urlencode($op->idAccount)."&amp;amount=".urlencode($op->amount)."&amp;comment=".urlencode($op->comment)."&amp;paymentMethod=".urlencode($op->paymentMethod) ?>">
+                    <a href="/editoperation/<?="?id=" . urlencode($op->id) . "&amp;type=" . urlencode($op->idCategory) . "&amp;accountId=" . urlencode($op->idAccount) . "&amp;amount=" . urlencode($op->amount) . "&amp;comment=" . urlencode($op->comment) . "&amp;paymentMethod=" . urlencode($op->paymentMethod)?>">
                       <span data-feather="edit"></i>
                     </a>
                   </td>
@@ -83,17 +86,17 @@
           <div class="form-group col-md-6">
             <label for="exampleFormControlSelect1">Liste des comptes</label>
             <select class="form-control" name="idAccount" id="exampleFormControlSelect1">
-              <?php foreach($accounts as $account) { ?>
-                <option value="<?= $account->id ?>"><?= $account->label ?></option>
-              <?php } ?>
+              <?php foreach ($accounts as $account) {?>
+                <option value="<?=$account->id?>"><?=$account->label?></option>
+              <?php }?>
             </select>
           </div>
             <div class="form-group col-md-6">
               <label for="exampleFormControlSelect1">Moyen de paiement</label>
               <select class="form-control" name="paymentMethod" id="exampleFormControlSelect1">
-                <?php foreach($paymentMethods as $method) { ?>
-                  <option value="<?= $method ?>"><?= strtoupper($method) ?></option>
-                <?php } ?>
+                <?php foreach ($paymentMethods as $method) {?>
+                  <option value="<?=$method?>"><?=strtoupper($method)?></option>
+                <?php }?>
               </select>
             </div>
           </div>

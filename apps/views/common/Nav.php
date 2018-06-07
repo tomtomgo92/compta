@@ -20,9 +20,13 @@
                 Editer un compte
                 </a>
             </li>
+
             <li class="nav-item">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Ajouter une opertaiton</button>
             </li>
+
+            <?php if(isset($selectedAccount)) { echo '<h2>'.$selectedAccount->accountProvision.'€</h2>'; } ?>
+
         </ul> 
     </div>    
 </nav>

@@ -30,10 +30,13 @@ class AccountsModel extends PDOModel {
     }
 
     public function deleteAccount($accountId) {
-        $q = "DELETE FROM `accounts` WHERE id = :idAccount";
-        return $this->request($q, array(
-                                    "idAccount" => $accountId
-                                  ));
+        $q = "DELETE FROM operations WHERE idAccount = :idAccount";
+        if ($this->request($q, array( "idAccount" => $accountId ))) {
+            $q = "DELETE FROM `accounts` WHERE id = :idAccount";
+            return $this->request($q,array(
+                                        "idAccount" => $accountId
+                                     ));
+        }
     }
 
     public function accountList($userId) {
@@ -41,6 +44,11 @@ class AccountsModel extends PDOModel {
         return $this->select($q, array(
                                     "userId" => $userId
                                   ));
+    }
+
+    public function getAccount($accountId) {
+        $q = "SELECT * from accounts WHERE id = :accountId LIMIT 1";
+        return $this->select($q, array( "accountId" => $accountId ));
     }
 
     public function accountCount($userId) {
