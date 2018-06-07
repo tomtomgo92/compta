@@ -1,6 +1,6 @@
 <?php
 
-$page = $url_array[0];
+$page = $url_array[2];
 
 switch ($page) {
     case 'dashboard':
@@ -35,7 +35,7 @@ switch ($page) {
         break;
     /*  */
 
-    /* default:
+     default:
         $view = _VIEWS . '/HomePage.php';
-        break; */
+        break; 
 }
