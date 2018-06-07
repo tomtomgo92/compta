@@ -57,4 +57,10 @@ class AccountsModel extends PDOModel {
                                     "userId" => $userId
                                   ));
     }
+
+    public function chart($date) {
+        $q = "SELECT date FROM operations ORDER BY date>DATE_FORMAT(NOW(),'%m%d')";
+        return $this->select($q, array("userId" => $userId));
+    }
+
 }
