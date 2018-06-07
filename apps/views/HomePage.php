@@ -1,7 +1,7 @@
 
 <div class="container-fluid">
   <div class="row">
-      <?php require _VIEWS . '/common/Nav.php'; ?>
+      <?php //require _VIEWS . '/common/Nav.php'; ?>
 
 <div class="container">
 
@@ -9,7 +9,7 @@
 
 <form action="/action_page.php">
   <div class="imgcontainer">
-    <img src="./Assets/imgs/user.png" alt="Avatar" class="avatar">
+    <img src="/compta/Assets/imgs/user.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
