@@ -1,12 +1,27 @@
 <?php
 require_once _MODELS . '/UsersModel.php';
 
-<<<<<<< HEAD
-$db->authenticate($_POST['email'], $_POST['password']);
-=======
 $userdb = new UsersModel($ini->host, $ini->dbName, $ini->dbUsername, $ini->dbPassword); 
-($userdb->authenticate(/* $_POST['email'] */ 'thomas.guillouet@thatmuch.fr' , /* $_POST['password'] */ '17tg11J59' ));
+if (isset($_POST['signinForm'])) {
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
+        $userdb->authenticate($_POST['email'] , $_POST['password']);
+        if (!empty($_SESSION) && isset($_SESSION['email'])) {
+            header('Location: /dashboard');
+            exit;
+        } else {
+            header('Location: /home');
+            exit;
+        } 
+    }
+}
 
 /* var_dump($_SESSION);
-exit; */
->>>>>>> 3b3d09d122bc197c68afebdec2bba41572e129f3
+exit;
+ */
+/* if (!empty($_SESSION) && isset($_SESSION['email'])) {
+    header('Location: /dashboard/'.$_SESSION['']);
+    exit;
+} else {
+    header('Location: /home');
+    exit;
+} */

@@ -7,26 +7,26 @@
 
 
 
-<form action="/action_page.php">
+<form action="/home" method="post">
   <div class="imgcontainer">
-    <img src="../compta/Assets/imgs/user.png" alt="Avatar" class="avatar">
+    <img src="/imgs/user.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Entrer votre username" name="uname" required>
+    <label for="email"><b>Username</b></label>
+    <input type="text" placeholder="Entrer votre username" name="email" required>
 
-    <label for="psw"><b>Mot de passe</b></label>
-    <input type="password" placeholder="Entrer votre mot de passe" name="psw" required>
+    <label for="password"><b>Mot de passe</b></label>
+    <input type="password" placeholder="Entrer votre mot de passe" name="password" required>
 
     
     <div class="row">
 
     <div class="col">
-    <button type="submit" class="btn btn-success">Connection</button> 
+    <button type="submit" name="signinForm" class="btn btn-success">Connexion</button> 
     </div>
     <div class="col">
-    <button type="submit" class="btn btn-secondary">Nouveau utilisateur</button>
+    <button type="submit" name="signupForm" class="btn btn-secondary">Nouvel utilisateur</button>
     </div>
 
    

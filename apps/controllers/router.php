@@ -34,16 +34,23 @@ switch ($page) {
         include 'EditOperationController.php';
         $view = _VIEWS . '/EditOperation.php';
         break;
-    case 'deleteoperation':
+        case 'deleteoperation':
         include 'DeleteOperationController.php';
         break;
-    /*  */
-    case 'home':
-        //include '/LoginController.php';
+        /*  */
+        
+        case 'home':
+        include 'LoginController.php';
         $view = _VIEWS . '/HomePage.php';
         break;
-
-    default:
+    
+    case 'logout':
+        session_destroy();
         header('Location: /home');
-        break; 
+        exit;
+        break;
+
+    /* default:
+        header('Location: /home');
+        break;  */
 }

@@ -1,6 +1,6 @@
 <?php
 
-if (!isset($_GET['accountId']) && !empty($_GET['accountId'])) {
+if (!isset($_GET['accountId']) && empty($_GET['accountId'])) {
     header('Location: /dashboard');
 }  
 

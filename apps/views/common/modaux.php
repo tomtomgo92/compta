@@ -28,7 +28,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <input type="submit" name="createAccountForm" class="btn btn-primary" value="Save changes" >
+                <input type="submit" name="createAccountForm" class="btn btn-primary" value="Create account" >
             </div>
             
     </form>

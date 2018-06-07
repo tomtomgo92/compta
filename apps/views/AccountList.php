@@ -17,6 +17,7 @@
         <div class="container col-md-9 ml-sm-auto pt-5">
             <?php 
             $turn = 2;  
+            $addAccountSet = false;
             for($i = 0; $i < sizeof($accounts); $i++) {
                 if ($turn = 2) {
                     echo '<div class="row mt-5">';
@@ -43,7 +44,12 @@
                 $nextOffset = ++$i; 
                 if ($nextOffset < sizeof($accounts)) { ?>
                     <div class="card col-md-5 ml-sm-auto col-lg-5 mt-6 p-0">
-                        <h5 class="card-header"><?= $accounts[$nextOffset]->label ?></h5>
+                        <div class="card-header d-flex justify-content-between">
+                            <h5><?= $accounts[$nextOffset]->label ?></h5>
+                            <a href="/deleteaccount/?idaccount=<?= $accounts[$nextOffset]->id ?>">
+                                <span style="width:50px;height:22px;" data-feather="trash"></span>
+                            </a>
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title"><?= $accounts[$nextOffset]->accountProvision . ' ' . $accounts[$nextOffset]->currency ?></h5>
                             <div class="row">
@@ -53,7 +59,10 @@
                             <a href="/accountpage/?accountId=<?= $accounts[$nextOffset]->id ?>" class="btn btn-primary">Plus d'information</a>
                         </div>
                     </div>
-                <?php } else { ?>
+                <?php 
+                } else { 
+                    $addAccountSet = true;    
+                ?>
                     <div id="addAccount" class="col-md-5 ml-sm-auto col-lg-5 mt-6 p-0 d-flex justify-content-center align-items-center">
                         <button class="btn btn-link" data-toggle="modal" data-target="#addAccountModal" >
                             <span data-feather="plus-circle"></span>
@@ -67,7 +76,7 @@
                 if ($turn < 2) { $turn++; } else { $turn = 0; } 
             } 
 
-            if ($turn == 0) { ?>
+            if ($turn == 0 && !$addAccountSet && sizeof($accounts) < 10) { ?>
                 <div class="row mt-5">
                     <div id="addAccount" class="col-md-5 ml-5 col-lg-5 mt-6 p-0 d-flex justify-content-center align-items-center">
                         <button class="btn btn-link" data-toggle="modal" data-target="#addAccountModal" >

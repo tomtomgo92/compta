@@ -23,9 +23,9 @@ require_once _CONTROLLERS . '/LoginController.php';
 include _CONTROLLERS.'/router.php';
 
 
-if (!(isset($_SESSION) && !empty($_SESSION))) {
+/* if (!(isset($_SESSION) && !empty($_SESSION))) {
     header('Location: /home');
-}
+} */
 
 /* Include the page if it is defined */
 if (isset($view)) {
