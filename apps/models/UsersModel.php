@@ -34,7 +34,7 @@ class UsersModel extends PDOModel {
         if ($passwordArray->size > 0) {
             $passwordArray = $passwordArray->rows[0];
             if ($encrypt->decrypt($passwordArray->password, $passwordArray->salt, $passwordArray->iv) === $password) {
-                $q = "SELECT id, first_name, last_name, email FROM users WHERE email = :email";
+                $q = "SELECT id idUser, first_name, last_name, email FROM users WHERE semail = :email";
                 $user = $this->select($q, array("email" => $email));
                 if ($user->size > 0) {
                     $_SESSION = $this->select($q, array("email" => $email))->rows[0];
