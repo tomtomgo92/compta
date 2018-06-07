@@ -6,7 +6,8 @@ var rename = require('gulp-rename');
 var run = require('gulp-run');
 
 var SCSS_SRC = './Assets/scss/**/*.scss';
-var SCSS_DEST = './Assets/css';
+//var SCSS_DEST = './Assets/css';
+var SCSS_DEST = './www/css';
 
 // Compiler le sassnpm inst
 gulp.task('sass', function() {
