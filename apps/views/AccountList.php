@@ -50,7 +50,7 @@
                                 <div class="col"><p class="card-text">Tout roule pour vous !</p></div>
                                 <div class="col"><canvas class="my-4" id="myChart" width="250px"></canvas></div>
                             </div>
-                            <a href="#" class="btn btn-primary">Plus d'information</a>
+                            <a href="/accountpage/?accountId=<?= $accounts[$nextOffset]->id ?>" class="btn btn-primary">Plus d'information</a>
                         </div>
                     </div>
                 <?php } else { ?>
@@ -61,12 +61,21 @@
                     </div>
                 <?php 
                 }
-                if ($turn = 2) {
+                if ($turn == 2) {
                     echo '</div>';
                 }
                 if ($turn < 2) { $turn++; } else { $turn = 0; } 
             } 
-            ?>
+
+            if ($turn == 0) { ?>
+                <div class="row mt-5">
+                    <div id="addAccount" class="col-md-5 ml-5 col-lg-5 mt-6 p-0 d-flex justify-content-center align-items-center">
+                        <button class="btn btn-link" data-toggle="modal" data-target="#addAccountModal" >
+                            <span data-feather="plus-circle"></span>
+                        </button>   
+                    </div>
+                </div>
+            <?php } ?>
         </div>
     </div>
 </div>

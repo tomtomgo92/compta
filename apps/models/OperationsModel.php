@@ -1,6 +1,6 @@
 <?php
 
-require _MODELS . '/PDOModel.php';
+require_once _MODELS . '/PDOModel.php';
 
 class OperationsModel extends PDOModel
 {
@@ -33,8 +33,6 @@ class OperationsModel extends PDOModel
 
     public function editOperation($opId, $account_id, $amount, $category_id, $payment_method, $comment) {
         $q = "UPDATE accounts SET accountProvision = accountProvision - (SELECT (CASE c.typeCat WHEN 'credit' THEN o.amount ELSE o.amount * -1 END ) FROM operations o, category c WHERE o.id = :idOp AND c.id = o.idCategory ORDER BY `date` DESC LIMIT 1) WHERE id = :idAccount;";
-        /* print_r($this->request($q, array( "idOp" => $opId, "idAccount" => $account_id)));
-        exit; */
         if ($this->request($q, array( "idOp" => $opId, "idAccount" => $account_id))) {
             $q = "UPDATE operations SET amount = (amount - (SELECT amount WHERE id = :opId)) + :amount, idAccount = :accountId, idCategory = :categoryId, paymentMethod = :paymentMethod, comment = :comment WHERE id = :opId;";
             if ($this->request($q, array( "opId" => (int) $opId, "amount" => (float) $amount, "accountId" => (int) $account_id, "categoryId" => (int) $category_id, "paymentMethod" => $payment_method, "comment" => $comment ))) {

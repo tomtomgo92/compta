@@ -39,7 +39,7 @@ switch ($page) {
         break;
     /*  */
     case 'home':
-        include '/LoginController.php';
+        //include '/LoginController.php';
         $view = _VIEWS . '/HomePage.php';
         break;
 

@@ -32,6 +32,7 @@ if (isset($view)) {
     include _VIEWS . '/common/Head.php';
     include _VIEWS . '/common/Header.php';
     include $view;
+    include _VIEWS . '/common/Modaux.php';
     include _VIEWS . '/common/Footer.php';
     include _VIEWS . '/common/ScriptInclude.php';
 }

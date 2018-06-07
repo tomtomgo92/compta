@@ -1,7 +1,7 @@
 <?php ?>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="addAccountModal" aria-hidden="true">
+<div class="modal fade" id="addAccountModal" tabindex="-1" role="dialog" aria-labelledby="addAccountModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,8 +10,8 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <form class="b-0" action="/createaccount" method="post">
             <div class="modal-body">
-            <form class="col-sm-5 m-auto" action="/createaccount" method="post">
         <input class="form-control mb-2"  placeholder="Name" type="text" name="label" />
         <select class="form-control mb-2" name="accountType">
             <option selected disabled>Sélectionner un type de compte</option>
@@ -25,13 +25,13 @@
             <option value="eur">EUR</option>
             <option value="usd">USD</option>
         </select>
-        <input type="submit" name="createAccountForm" />
-    </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <input type="submit" name="createAccountForm" class="btn btn-primary" value="Save changes" >
             </div>
+            
+    </form>
         </div>
     </div>
 </div>
