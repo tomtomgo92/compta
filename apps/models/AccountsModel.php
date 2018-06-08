@@ -48,7 +48,9 @@ class AccountsModel extends PDOModel {
 
     public function getAccount($accountId) {
         $q = "SELECT * from accounts WHERE id = :accountId LIMIT 1";
-        return $this->select($q, array( "accountId" => $accountId ));
+        return $this->select($q, array(
+                                        "accountId" => $accountId 
+                                    ));
     }
 
     public function accountCount($userId) {
@@ -60,7 +62,9 @@ class AccountsModel extends PDOModel {
 
     public function chart($date) {
         $q = "SELECT date FROM operations ORDER BY date>DATE_FORMAT(NOW(),'%m%d')";
-        return $this->select($q, array("userId" => $userId));
+        return $this->select($q, array(
+                                        "userId" => $userId
+                                    ));
     }
 
 }
